@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
+
 <body>
 
     <header class="main-header">
@@ -28,12 +30,15 @@
             </div>
             <div class="hero-content">
                 <!-- Profile picture moved here, above the hero-name -->
-                <img src="./Profile.png" alt="Portrait of June Chakma" class="hero-profile-image">
-                <h1 class="hero-name">
-                    <span>June</span> <span>Chakma</span>
-                </h1>
-                <p class="hero-tagline">Web Designer / Developer / Vibe Coder</p>
-                <a href="#projects" class="cta-button">See my work →</a>
+                <div class="hero-text">
+                    <img src="./Profile.png" alt="Portrait of June Chakma" class="hero-profile-image">
+                    <h1 class="hero-name">
+                        <span>June</span> <span>Chakma</span>
+                    </h1>
+                    <p class="hero-tagline">Frontend Developer / Vibe Coder</p>
+                    <a href="#projects" class="cta-button">See my work →</a>
+
+                </div>
             </div>
         </section>
 
@@ -61,7 +66,7 @@
                         <img src="placeholder-project-3.jpg" alt="Project 3 Screenshot">
                         <h3>Project Title Three</h3>
                         <p>Highlighting key features here.</p>
-                         <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                     <!-- Add more project items as needed -->
                 </div>
@@ -82,4 +87,5 @@
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
+
 </html>

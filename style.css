@@ -1,10 +1,15 @@
 /* --- Base Styles & Variables --- */
 :root {
-    --bg-color: #111111; /* Dark background */
-    --text-color: #e0e0e0; /* Light grey text */
-    --heading-color: #ffffff; /* White headings */
-    --accent-color: #f8b4c4; /* Light pink accent (like James Williams) */
-    --card-bg-color: #1f1f1f; /* Slightly lighter background for cards */
+    --bg-color: #111111;
+    /* Dark background */
+    --text-color: #e0e0e0;
+    /* Light grey text */
+    --heading-color: #ffffff;
+    /* White headings */
+    --accent-color: #f8b4c4;
+    /* Light pink accent (like James Williams) */
+    --card-bg-color: #1f1f1f;
+    /* Slightly lighter background for cards */
     --border-color: #333333;
 
     --font-primary: 'Inter', sans-serif;
@@ -25,7 +30,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
 img {
@@ -52,7 +58,8 @@ a:hover {
 
 /* --- Header --- */
 .main-header {
-    position: fixed; /* Or absolute */
+    position: fixed;
+    /* Or absolute */
     top: 0;
     left: 0;
     width: 100%;
@@ -68,21 +75,24 @@ a:hover {
     height: 40px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid var(--border-color);
-    border-radius: 50%; /* Make it circular */
+    border-radius: 50%;
+    /* Make it circular */
     cursor: pointer;
     /* Add placeholder content or icons here */
 }
 
 /* --- Hero Section --- */
 .hero {
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
+    /* Full viewport height */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 4rem 2rem;
-    position: relative; /* Needed for background image positioning */
+    position: relative;
+    /* Needed for background image positioning */
     overflow: hidden;
 }
 
@@ -92,16 +102,20 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Behind content */
+    z-index: 1;
+    /* Behind content */
 }
 
 .hero-bg-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the area */
+    object-fit: cover;
+    /* Cover the area */
     object-position: center center;
-    filter: grayscale(100%) brightness(0.5); /* Make it B&W and darker */
-    opacity: 0.2; /* Make it subtle */
+    filter: grayscale(100%) brightness(0.5);
+    /* Make it B&W and darker */
+    opacity: 0.2;
+    /* Make it subtle */
 }
 
 .hero-bg-overlay {
@@ -115,7 +129,8 @@ a:hover {
 }
 
 .hero-content {
-    position: relative; /* Ensure content is above background */
+    position: relative;
+    /* Ensure content is above background */
     z-index: 2;
 }
 
@@ -123,21 +138,38 @@ a:hover {
 .hero-profile-image {
     width: 300px;
     height: auto;
+    position: absolute;
+    top: -100px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    z-index: -10;
+}
+
+.hero-text {
+    position: absolute;
+    text-wrap: nowrap;
+    left: 50%;
+    top: 100px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 .hero-name {
-    font-size: clamp(3.5rem, 10vw, 8rem); /* Responsive font size */
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    /* Responsive font size */
     font-weight: 900;
     color: var(--heading-color);
     letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
     line-height: 1.1;
     text-transform: uppercase;
+
 }
+
 /* Style parts of the name with the accent color */
 .hero-name span:first-child {
-     color: var(--accent-color);
-     /* Or use nth-child for more complex highlighting */
+    color: var(--accent-color);
+    /* Or use nth-child for more complex highlighting */
 }
 
 .hero-tagline {
@@ -153,7 +185,8 @@ a:hover {
     color: var(--text-color);
     border: 1px solid var(--border-color);
     padding: 0.8rem 1.8rem;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
+    /* Pill shape */
     font-weight: 700;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
@@ -166,7 +199,8 @@ a:hover {
 
 /* --- Projects Section --- */
 .projects {
-    padding: 6rem 0; /* Add space above and below */
+    padding: 6rem 0;
+    /* Add space above and below */
 }
 
 .projects h2 {
@@ -186,21 +220,25 @@ a:hover {
 .project-item {
     background-color: var(--card-bg-color);
     border-radius: 8px;
-    overflow: hidden; /* Keep image corners rounded */
+    overflow: hidden;
+    /* Keep image corners rounded */
     padding: 1.5rem;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-item:hover {
-    transform: translateY(-5px); /* Slight lift effect */
+    transform: translateY(-5px);
+    /* Slight lift effect */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-item img {
-    border-radius: 4px; /* Slightly rounded image corners */
+    border-radius: 4px;
+    /* Slightly rounded image corners */
     margin-bottom: 1rem;
-    aspect-ratio: 16 / 10; /* Maintain consistent image shape */
+    aspect-ratio: 16 / 10;
+    /* Maintain consistent image shape */
     object-fit: cover;
 }
 
@@ -235,7 +273,7 @@ a:hover {
 @media (max-width: 768px) {
     .hero-name {
         /* Slightly smaller on tablets */
-         font-size: clamp(3rem, 12vw, 6rem);
+        font-size: clamp(3rem, 12vw, 6rem);
     }
 
     .hero-tagline {
@@ -244,34 +282,48 @@ a:hover {
 
     .project-grid {
         /* Stack to single column if needed, or adjust minmax */
-        grid-template-columns: 1fr; /* Single column */
+        grid-template-columns: 1fr;
+        /* Single column */
         gap: 2rem;
     }
 
-     .projects h2 {
+    .projects h2 {
         font-size: 2rem;
-     }
+    }
 }
 
 @media (max-width: 480px) {
-     .main-header {
+    .hero-text {
+        top: 80px;
+        text-wrap: wrap;
+    }
+    .hero-profile-image {
+        top: -60px;
+        z-index: -10;
+    }
+    .main-header {
         padding: 1rem 1.5rem;
-     }
-     .nav-icon {
+    }
+
+    .nav-icon {
         width: 35px;
         height: 35px;
-     }
-     .hero {
+    }
+
+    .hero {
         padding: 3rem 1rem;
-     }
-     .cta-button {
-         padding: 0.7rem 1.5rem;
-         font-size: 0.9rem;
-     }
-     .projects {
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .projects {
         padding: 4rem 0;
-     }
-      .container {
+    }
+
+    .container {
         padding: 0 1rem;
     }
 }
