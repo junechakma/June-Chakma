@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Favicon placeholders -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+    <header class="main-header">
+        <!-- Simple navigation icons (optional) -->
+        <div class="nav-icon"></div>
+        <div class="nav-icon"></div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background">
+                <div class="hero-bg-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <!-- Profile picture moved here, above the hero-name -->
+                <img src="./Profile.png" alt="Portrait of June Chakma" class="hero-profile-image">
+                <h1 class="hero-name">
+                    <span>June</span> <span>Chakma</span>
+                </h1>
+                <p class="hero-tagline">Web Designer / Developer / Vibe Coder</p>
+                <a href="#projects" class="cta-button">See my work →</a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2>Selected Work</h2>
+                <div class="project-grid">
+                    <!-- Project Item 1 -->
+                    <div class="project-item">
+                        <img src="placeholder-project-1.jpg" alt="Project 1 Screenshot">
+                        <h3>Project Title One</h3>
+                        <p>Short description of the project.</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                    <!-- Project Item 2 -->
+                    <div class="project-item">
+                        <img src="placeholder-project-2.jpg" alt="Project 2 Screenshot">
+                        <h3>Project Title Two</h3>
+                        <p>Another interesting project description.</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                    <!-- Project Item 3 -->
+                    <div class="project-item">
+                        <img src="placeholder-project-3.jpg" alt="Project 3 Screenshot">
+                        <h3>Project Title Three</h3>
+                        <p>Highlighting key features here.</p>
+                         <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                    <!-- Add more project items as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Add other sections like About, Contact as needed -->
+
+    </main>
+
+    <footer class="main-footer">
+        <p> 2023 Your Name. All rights reserved.</p>
+        <!-- Add social links or contact info -->
+    </footer>
+
+    <script>
+        // Simple script to update the year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

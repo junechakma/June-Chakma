@@ -1,0 +1,277 @@
+/* --- Base Styles & Variables --- */
+:root {
+    --bg-color: #111111; /* Dark background */
+    --text-color: #e0e0e0; /* Light grey text */
+    --heading-color: #ffffff; /* White headings */
+    --accent-color: #f8b4c4; /* Light pink accent (like James Williams) */
+    --card-bg-color: #1f1f1f; /* Slightly lighter background for cards */
+    --border-color: #333333;
+
+    --font-primary: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--heading-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Header --- */
+.main-header {
+    position: fixed; /* Or absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer;
+    /* Add placeholder content or icons here */
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative; /* Needed for background image positioning */
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind content */
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area */
+    object-position: center center;
+    filter: grayscale(100%) brightness(0.5); /* Make it B&W and darker */
+    opacity: 0.2; /* Make it subtle */
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Optional gradient overlay */
+    background: linear-gradient(to bottom, rgba(17, 17, 17, 0.1), rgba(17, 17, 17, 0.8));
+}
+
+.hero-content {
+    position: relative; /* Ensure content is above background */
+    z-index: 2;
+}
+
+/* Profile image styling */
+.hero-profile-image {
+    width: 300px;
+    height: auto;
+}
+
+.hero-name {
+    font-size: clamp(3.5rem, 10vw, 8rem); /* Responsive font size */
+    font-weight: 900;
+    color: var(--heading-color);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+/* Style parts of the name with the accent color */
+.hero-name span:first-child {
+     color: var(--accent-color);
+     /* Or use nth-child for more complex highlighting */
+}
+
+.hero-tagline {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 400;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px; /* Pill shape */
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
+/* --- Projects Section --- */
+.projects {
+    padding: 6rem 0; /* Add space above and below */
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.project-grid {
+    display: grid;
+    /* Responsive grid: Adjust minmax value as needed */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-item {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    overflow: hidden; /* Keep image corners rounded */
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-item img {
+    border-radius: 4px; /* Slightly rounded image corners */
+    margin-bottom: 1rem;
+    aspect-ratio: 16 / 10; /* Maintain consistent image shape */
+    object-fit: cover;
+}
+
+.project-item h3 {
+    font-size: 1.4rem;
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-item p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.project-item a {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .hero-name {
+        /* Slightly smaller on tablets */
+         font-size: clamp(3rem, 12vw, 6rem);
+    }
+
+    .hero-tagline {
+        font-size: clamp(1rem, 4vw, 1.3rem);
+    }
+
+    .project-grid {
+        /* Stack to single column if needed, or adjust minmax */
+        grid-template-columns: 1fr; /* Single column */
+        gap: 2rem;
+    }
+
+     .projects h2 {
+        font-size: 2rem;
+     }
+}
+
+@media (max-width: 480px) {
+     .main-header {
+        padding: 1rem 1.5rem;
+     }
+     .nav-icon {
+        width: 35px;
+        height: 35px;
+     }
+     .hero {
+        padding: 3rem 1rem;
+     }
+     .cta-button {
+         padding: 0.7rem 1.5rem;
+         font-size: 0.9rem;
+     }
+     .projects {
+        padding: 4rem 0;
+     }
+      .container {
+        padding: 0 1rem;
+    }
+}
