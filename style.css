@@ -72,7 +72,7 @@ a:hover {
     /* Needed for background image positioning */
     overflow: hidden;
     background-color: var(--dark-bg);
-
+    perspective: 1000px;
 }
 
 
@@ -85,6 +85,7 @@ a:hover {
     height: 100%;
     z-index: 1;
     /* Behind content */
+    transition: transform 0.3s ease-out;
 }
 
 .hero-bg-image {
@@ -113,6 +114,10 @@ a:hover {
     position: relative;
     /* Ensure content is above background */
     z-index: 2;
+    /* Above background */
+    max-width: 800px;
+    margin: 0 auto;
+    transition: transform 0.3s ease-out;
 }
 
 /* Corner icons styling */
@@ -123,6 +128,7 @@ a:hover {
     display: flex;
     gap: 1.5rem;
     z-index: 10;
+    transition: transform 0.3s ease-out;
 }
 
 .corner-icon {
@@ -212,6 +218,23 @@ a:hover {
     background-color: var(--accent-color);
     color: var(--bg-color);
     border-color: var(--accent-color);
+}
+
+/* --- Animation Effects --- */
+.grid-item, .credential-item, .about-content, .contact-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hover-effect {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Projects Section --- */
