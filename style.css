@@ -56,30 +56,7 @@ a:hover {
     padding: 0 2rem;
 }
 
-/* --- Header --- */
-.main-header {
-    position: fixed;
-    /* Or absolute */
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
 
-.nav-icon {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    /* Make it circular */
-    cursor: pointer;
-    /* Add placeholder content or icons here */
-}
 
 /* --- Hero Section --- */
 .hero {
@@ -94,6 +71,8 @@ a:hover {
     position: relative;
     /* Needed for background image positioning */
     overflow: hidden;
+    background-color: var(--dark-bg);
+
 }
 
 .hero-background {
@@ -202,8 +181,6 @@ a:hover {
     padding: 6rem 0;
     /* Add space above and below */
 }
-
-
 
 .projects h2 {
     font-size: 2.5rem;
@@ -396,6 +373,77 @@ a:hover {
     color: var(--bg-color);
 }
 
+/* --- About, Experience, Education Grid Layout --- */
+.info-section {
+    padding: 5rem 0;
+    background-color: var(--light-bg);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.about-column {
+    padding-right: 2rem;
+}
+
+.about-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.credentials-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.credential-box {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 3px solid var(--accent-color);
+}
+
+.credential-item {
+    margin-top: 1rem;
+}
+
+.credential-item h4 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.credential-item h5 {
+    margin: 0.5rem 0;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.credential-date {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 0.8rem;
+}
+
+.info-section h2 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.info-section h3 {
+    font-size: 1.8rem;
+    color: var(--heading-color);
+    margin-bottom: 1.5rem;
+}
+
 /* --- Footer --- */
 .main-footer {
     text-align: center;
@@ -404,6 +452,13 @@ a:hover {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.5);
     border-top: 1px solid var(--border-color);
+}
+
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
 }
 
 /* --- Responsive Adjustments --- */
@@ -475,6 +530,17 @@ a:hover {
     .view-project-pill {
         font-size: 0.8rem;
         padding: 8px 16px;
+    }
+    
+
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-column {
+        padding-right: 0;
     }
 }
 
