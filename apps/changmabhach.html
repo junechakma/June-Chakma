@@ -78,6 +78,12 @@
                 <div class="screenshot-carousel">
                     <div class="screenshot-container">
                         <div class="screenshot-wrapper">
+                            <video width="100%" controls>
+                                <source src="../project/app-images/changmabhach.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="screenshot-wrapper">
                             <img src="../project/app-images/changmabhach1.png" alt="ChangmaBhach Screenshot 1" class="screenshot">
                         </div>
                         <div class="screenshot-wrapper">
@@ -130,35 +136,42 @@
                 <div class="description-box">
                     <h2>About this app</h2>
                     <div class="description-content">
-                        <p>ChangmaBhach is a comprehensive Chakma language learning application designed to preserve and promote the Chakma language. The app offers an intuitive interface for users of all ages to learn, practice, and master the Chakma language.</p>
+                        <p>Language is a fundamental aspect of cultural identity, and the preservation of lesser-known languages is crucial for maintaining cultural diversity. The Chakma language, spoken by the Chakma people, faces significant challenges in written script acquisition due to the lack of accessible resources, teaching tools, and learning materials. ChangmaBhach is an ML-powered mobile application designed to address these challenges by providing a comprehensive and interactive platform for learning the Chakma language and script.</p>
+                        
+                        <p>Built using Flutter and integrated with TensorFlow Lite, the app enables users to practice Chakma characters by drawing them directly on a canvas. An offline handwriting recognition system validates these inputs, making learning accessible even in connectivity-limited areas.</p>
                         
                         <h3>Features</h3>
                         <ul>
-                            <li>Interactive lessons for beginners to advanced learners</li>
-                            <li>Chakma alphabet learning with proper pronunciation</li>
-                            <li>Vocabulary builder with common phrases and words</li>
-                            <li>Daily practice exercises and quizzes</li>
-                            <li>Cultural context and historical information</li>
-                            <li>Offline mode for learning without internet</li>
+                            <li>Interactive handwriting practice with real-time recognition and feedback</li>
+                            <li>Structured lessons for learning Chakma vowels, consonants, and diacritics</li>
+                            <li>Comprehensive dictionary with Chakma-Bangla translations</li>
+                            <li>Flashcards and alphabet table for supplemental learning</li>
+                            <li>Offline functionality for learning without internet connection</li>
+                            <li>Progress tracking and performance feedback</li>
+                            <li>Support for both English and Bangla interfaces</li>
                         </ul>
                         
                         <h3>Technical Details</h3>
                         <div class="tech-details">
                             <div class="tech-detail-item">
-                                <span class="tech-label">Version</span>
-                                <span class="tech-value">1.2.0</span>
+                                <span class="tech-label">Frontend</span>
+                                <span class="tech-value">Flutter</span>
                             </div>
                             <div class="tech-detail-item">
-                                <span class="tech-label">Updated</span>
-                                <span class="tech-value">March 15, 2025</span>
+                                <span class="tech-label">ML Framework</span>
+                                <span class="tech-value">TensorFlow Lite</span>
                             </div>
                             <div class="tech-detail-item">
-                                <span class="tech-label">Size</span>
-                                <span class="tech-value">24 MB</span>
+                                <span class="tech-label">Model Type</span>
+                                <span class="tech-value">CNN (Convolutional Neural Network)</span>
                             </div>
                             <div class="tech-detail-item">
-                                <span class="tech-label">Installs</span>
-                                <span class="tech-value">10,000+</span>
+                                <span class="tech-label">Dataset</span>
+                                <span class="tech-value">1,280 handwriting samples</span>
+                            </div>
+                            <div class="tech-detail-item">
+                                <span class="tech-label">Model Accuracy</span>
+                                <span class="tech-value">99% on test data</span>
                             </div>
                             <div class="tech-detail-item">
                                 <span class="tech-label">Platforms</span>
@@ -182,8 +195,8 @@
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
                         </div>
-                        <h3>Research & Design</h3>
-                        <p>Extensive research on Chakma language structure and pedagogy. Collaborated with language experts to ensure accuracy and cultural sensitivity.</p>
+                        <h3>Dataset Preparation</h3>
+                        <p>Created a custom dataset of 1,280 handwriting samples for Chakma characters, spanning vowels, consonants, and diacritics. Applied preprocessing techniques including standardization and augmentation to improve model robustness.</p>
                     </div>
                     <div class="process-item">
                         <div class="process-icon">
@@ -194,8 +207,8 @@
                                 <circle cx="11" cy="11" r="2"></circle>
                             </svg>
                         </div>
-                        <h3>Development</h3>
-                        <p>Built with React Native for cross-platform compatibility. Implemented offline functionality and optimized for low-end devices common in rural areas.</p>
+                        <h3>Model Development</h3>
+                        <p>Trained a convolutional neural network (CNN) for handwriting recognition using TensorFlow. Converted the model to TensorFlow Lite for integration with Flutter, optimizing for offline use through model quantization.</p>
                     </div>
                     <div class="process-item">
                         <div class="process-icon">
@@ -204,8 +217,8 @@
                                 <path d="m9 12 2 2 4-4"></path>
                             </svg>
                         </div>
-                        <h3>Testing & Feedback</h3>
-                        <p>Conducted extensive user testing with both native speakers and language learners. Incorporated feedback to improve user experience and learning outcomes.</p>
+                        <h3>App Implementation</h3>
+                        <p>Built the app using Flutter for cross-platform compatibility. Implemented features including handwriting practice with real-time feedback, structured lessons, flashcards, and a Chakma-Bangla dictionary, all optimized for offline use.</p>
                     </div>
                 </div>
             </div>
