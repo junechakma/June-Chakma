@@ -417,10 +417,11 @@ a:hover {
 
 
 .about-section .container {
- padding: 6rem;   
- background-color: #191919;
+ padding: 1rem 12rem;   
+ /* background-color: #191919; */
  border-radius: 10px;
 }
+
 .about-section h2 {
     font-size: clamp(2rem, 4vw, 2.5rem);
     color: var(--heading-color);
@@ -450,9 +451,10 @@ a:hover {
     transition: color 0.3s ease;
 }
 
-.credentials {
+.credentials  {
+    margin-top: 4rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 2.5rem;
 }
 
