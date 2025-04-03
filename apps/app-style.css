@@ -1,0 +1,360 @@
+/* App Pages Styling */
+
+/* --- Base Styles --- */
+:root {
+    --app-accent: #A9CAE3;
+    --app-bg: #111111;
+    --app-card-bg: #1f1f1f;
+    --app-text: #e0e0e0;
+    --app-heading: #ffffff;
+    --app-border: #333333;
+    --app-shadow: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-color: var(--app-bg);
+}
+
+/* --- Header --- */
+.app-header {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--app-border);
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--app-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: var(--app-accent);
+}
+
+/* --- App Hero Section --- */
+.app-hero {
+    padding: 3rem 0;
+}
+
+.app-hero-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.app-icon-wrapper {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px var(--app-shadow);
+}
+
+.app-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.app-info {
+    flex: 1;
+}
+
+.app-info h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--app-heading);
+    margin-bottom: 0.5rem;
+}
+
+.app-tagline {
+    font-size: 1.2rem;
+    color: var(--app-text);
+    margin-bottom: 1rem;
+}
+
+.app-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.app-developer, .app-category {
+    font-size: 0.9rem;
+    color: var(--app-text);
+    opacity: 0.8;
+}
+
+.app-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.rating-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--app-accent);
+}
+
+.app-actions {
+    margin-top: 1rem;
+}
+
+.app-download-button {
+    display: inline-block;
+    background-color: var(--app-accent);
+    color: var(--app-bg);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.app-download-button:hover {
+    opacity: 0.9;
+    color: var(--app-bg);
+}
+
+/* --- Screenshots Section --- */
+.app-screenshots {
+    padding: 3rem 0;
+}
+
+.app-screenshots h2 {
+    font-size: 1.8rem;
+    color: var(--app-heading);
+    margin-bottom: 2rem;
+}
+
+.screenshot-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.screenshot-container {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.4s ease;
+}
+
+.screenshot-wrapper {
+    flex: 0 0 280px;
+    height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px var(--app-shadow);
+}
+
+.screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.carousel-prev, .carousel-next {
+    background-color: var(--app-card-bg);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--app-text);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: var(--app-accent);
+    color: var(--app-bg);
+}
+
+/* --- Description Section --- */
+.app-description {
+    padding: 3rem 0;
+}
+
+.description-box {
+    background-color: var(--app-card-bg);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px var(--app-shadow);
+}
+
+.description-box h2 {
+    font-size: 1.8rem;
+    color: var(--app-heading);
+    margin-bottom: 1.5rem;
+}
+
+.description-content {
+    color: var(--app-text);
+}
+
+.description-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.description-content h3 {
+    font-size: 1.4rem;
+    color: var(--app-heading);
+    margin: 2rem 0 1rem;
+}
+
+.description-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.description-content li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.tech-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tech-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.tech-label {
+    font-size: 0.9rem;
+    color: var(--app-text);
+    opacity: 0.7;
+}
+
+.tech-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--app-heading);
+}
+
+/* --- Development Process Section --- */
+.development-process {
+    padding: 3rem 0 5rem;
+}
+
+.development-process h2 {
+    font-size: 1.8rem;
+    color: var(--app-heading);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.process-item {
+    background-color: var(--app-card-bg);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px var(--app-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--app-shadow);
+}
+
+.process-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(169, 202, 227, 0.1);
+    color: var(--app-accent);
+    margin-bottom: 1.5rem;
+}
+
+.process-item h3 {
+    font-size: 1.3rem;
+    color: var(--app-heading);
+    margin-bottom: 1rem;
+}
+
+.process-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--app-text);
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+    .app-hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .app-meta {
+        justify-content: center;
+    }
+    
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .screenshot-wrapper {
+        flex: 0 0 240px;
+        height: 420px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-info h1 {
+        font-size: 2rem;
+    }
+    
+    .app-tagline {
+        font-size: 1rem;
+    }
+    
+    .description-box {
+        padding: 1.5rem;
+    }
+    
+    .tech-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .screenshot-wrapper {
+        flex: 0 0 200px;
+        height: 360px;
+    }
+}
