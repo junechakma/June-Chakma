@@ -564,8 +564,8 @@ a:hover {
 }
 
 .gmail:hover {
-    background-color: #EA4335;
-    border-color: #EA4335;
+    background-color: var(--accent-color);
+    border-color: #99c5e6;
 }
 
 .linkedin:hover {
@@ -725,10 +725,11 @@ footer {
         grid-row: span 2;
     }
     
+    /* Mobile apps in a row */
     .grid-item.mobile-app {
-        grid-column: span 4;
+        grid-column: span 2;
         grid-row: span 3;
-        max-width: 200px;
+        max-width: 150px;
         margin: 0 auto;
     }
     
@@ -746,6 +747,10 @@ footer {
     }
     .about-section .container {
         padding: 2rem;
+    }
+    .credentials {
+        flex-direction: column;
+        gap: 2rem;
     }
     .social-buttons {
         gap: 1.2rem;
