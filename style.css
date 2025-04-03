@@ -203,6 +203,8 @@ a:hover {
     /* Add space above and below */
 }
 
+
+
 .projects h2 {
     font-size: 2.5rem;
     color: var(--heading-color);
@@ -267,8 +269,25 @@ a:hover {
 }
 
 .grid-item:nth-child(8) {
-    grid-column: span 12;
-    grid-row: span 2;
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.grid-item:nth-child(9) {
+    grid-column: span 8;
+    grid-row: span 3;
+}
+
+.grid-item:nth-child(10) {
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+/* Mobile app styling */
+.grid-item.mobile-app {
+    aspect-ratio: 1080/2340;
+    max-height: 450px;
+    justify-self: center;
 }
 
 .grid-item a {
@@ -419,10 +438,28 @@ a:hover {
     }
     
     .grid-item:nth-child(6),
-    .grid-item:nth-child(7),
-    .grid-item:nth-child(8) {
+    .grid-item:nth-child(7) {
         grid-column: span 6;
         grid-row: span 2;
+    }
+    
+    .grid-item:nth-child(8) {
+        grid-column: span 3;
+        grid-row: span 3;
+    }
+    
+    .grid-item:nth-child(9) {
+        grid-column: span 6;
+        grid-row: span 2;
+    }
+    
+    .grid-item:nth-child(10) {
+        grid-column: span 3;
+        grid-row: span 3;
+    }
+    
+    .grid-item.mobile-app {
+        max-height: 400px;
     }
 
     .projects h2 {
@@ -486,6 +523,13 @@ a:hover {
     .grid-item:nth-child(n) {
         grid-column: span 4;
         grid-row: span 2;
+    }
+    
+    .grid-item.mobile-app {
+        grid-column: span 4;
+        grid-row: span 3;
+        max-width: 200px;
+        margin: 0 auto;
     }
     
     .tech-pills span {
