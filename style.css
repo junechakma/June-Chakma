@@ -225,7 +225,7 @@ a:hover {
     position: relative;
     overflow: hidden;
     background-color: var(--card-bg-color);
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -301,24 +301,60 @@ a:hover {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0);
     padding: 15px;
-    opacity: 0;
+    opacity: 1; /* Always visible by default */
     transition: opacity 0.3s ease;
 }
 
 .grid-item:hover .tech-overlay {
+    opacity: 0; /* Hide on hover */
+}
+
+/* New centered view project overlay */
+.view-project {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.grid-item:hover .view-project {
     opacity: 1;
+}
+
+.view-project-pill {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover .view-project-pill {
+    transform: translateY(0);
 }
 
 .tech-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    justify-content: center; /* Center the pills */
 }
 
 .tech-pills span {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(30, 27, 27);
     color: white;
     padding: 5px 12px;
     border-radius: 20px;
@@ -388,6 +424,11 @@ a:hover {
         /* Show overlay by default on tablets for better UX */
         opacity: 1;
         background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .view-project-pill {
+        font-size: 0.8rem;
+        padding: 8px 16px;
     }
 }
 
