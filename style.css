@@ -245,12 +245,12 @@ a:hover {
     grid-row: span 2;
 }
 
-.grid-item:nth-child(8) {
+.grid-item:nth-child(9) {
     grid-column: span 2;
     grid-row: span 3;
 }
 
-.grid-item:nth-child(9) {
+.grid-item:nth-child(8) {
     grid-column: span 8;
     grid-row: span 3;
 }
