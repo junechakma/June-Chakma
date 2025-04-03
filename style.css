@@ -113,6 +113,42 @@ a:hover {
     z-index: 2;
 }
 
+/* Corner icons styling */
+.corner-icons {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    z-index: 10;
+}
+
+.corner-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.corner-icon:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.corner-icon svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
 /* Profile image styling */
 .hero-profile-image {
     width: 300px;
@@ -359,8 +395,8 @@ a:hover {
 }
 
 .tech-pills span {
-    background-color: rgb(30, 27, 27);
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--card-bg-color);
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.7rem;
