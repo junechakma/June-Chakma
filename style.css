@@ -25,7 +25,7 @@
 }
 
 .loader .box1, .loader .box2, .loader .box3 {
-    border: 8px solid white;
+    border: 10px solid white;
     box-sizing: border-box;
     position: absolute;
     display: block;
