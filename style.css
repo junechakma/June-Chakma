@@ -29,6 +29,16 @@
     box-sizing: border-box;
     position: absolute;
     display: block;
+    animation: colorChange 4s infinite alternate ease-in-out;
+}
+
+@keyframes colorChange {
+    0% {
+        border-color: white;
+    }
+    100% {
+        border-color: var(--accent-color);
+    }
 }
 
 .loader .box1 {
@@ -36,7 +46,7 @@
     height: 48px;
     margin-top: 64px;
     margin-left: 0px;
-    animation: anime1 4s 0s forwards ease-in-out infinite;
+    animation: anime1 4s 0s forwards ease-in-out infinite, colorChange 4s infinite alternate ease-in-out;
 }
 
 .loader .box2 {
@@ -44,7 +54,7 @@
     height: 48px;
     margin-top: 0px;
     margin-left: 0px;
-    animation: anime2 4s 0s forwards ease-in-out infinite;
+    animation: anime2 4s 0s forwards ease-in-out infinite, colorChange 4s infinite alternate ease-in-out;
 }
 
 .loader .box3 {
@@ -52,7 +62,7 @@
     height: 48px;
     margin-top: 0px;
     margin-left: 64px;
-    animation: anime3 4s 0s forwards ease-in-out infinite;
+    animation: anime3 4s 0s forwards ease-in-out infinite, colorChange 4s infinite alternate ease-in-out;
 }
 
 @keyframes anime1 {
