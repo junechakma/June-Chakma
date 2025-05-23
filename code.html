@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>June Chakma Particle Text & Image Animation</title>
+  <style>
+    /* Basic Reset */
+    body {
+      margin: 0;
+      overflow: hidden; /* Prevent scrollbars due to canvas covering viewport */
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    /* Equivalent Tailwind CSS classes */
+    .relative {
+      position: relative;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .h-dvh {
+      /* Use dvh for dynamic viewport height, fallback to vh for wider support */
+      height: 100dvh;
+      height: 100vh;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .bg-black {
+      background-color: black;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .left-0 {
+      left: 0;
+    }
+
+    .touch-none {
+      touch-action: none; /* Prevents default browser touch gestures (like pull-to-refresh) */
+    }
+
+    .bottom-\[100px\] { /* Custom value in Tailwind */
+      bottom: 100px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .z-10 {
+      z-index: 10;
+    }
+
+    .font-mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    .text-gray-400 {
+      color: #9CA3AF; /* rgb(156 163 175) */
+    }
+
+    .text-gray-300 {
+      color: #D1D5DB; /* rgb(209 213 219) */
+    }
+
+    .text-gray-500 {
+      color: #6B7280; /* rgb(107 114 128) */
+    }
+
+    .text-xs {
+      font-size: 0.75rem; /* 12px */
+      line-height: 1rem; /* 16px */
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .mt-2\.5 { /* Custom value in Tailwind */
+        margin-top: 0.625rem; /* 10px */
+    }
+
+    /* Responsive text sizes */
+    @media (min-width: 640px) { /* sm:text-base */
+      .sm\:text-base {
+        font-size: 1rem; /* 16px */
+        line-height: 1.5rem; /* 24px */
+      }
+    }
+
+    @media (min-width: 768px) { /* md:text-sm */
+      .md\:text-sm {
+        font-size: 0.875rem; /* 14px */
+        line-height: 1.25rem; /* 20px */
+      }
+    }
+
+    /* Transitions */
+    .transition-colors {
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+
+    .duration-300 {
+      transition-duration: 300ms;
+    }
+
+    .hover\:text-cyan-400:hover {
+      color: #22D3EE; /* rgb(34 211 238) */
+    }
+
+    /* Custom hover effect for June and Chakma */
+    #june-text:hover {
+      color: #FF69B4; /* Pink */
+    }
+    #chakma-text:hover {
+      color: #00FF00; /* Green */
+    }
+  </style>
+</head>
+<body>
+  <div class="relative w-full h-dvh flex flex-col items-center justify-center bg-black">
+    <canvas 
+      id="particleCanvas" 
+      class="w-full h-full absolute top-0 left-0 touch-none"
+      aria-label="Interactive particle effect with an image and the text 'June Chakma'"
+    ></canvas>
+    <div class="absolute bottom-[100px] text-center z-10">
+      <p class="font-mono text-gray-400 text-xs sm:text-base md:text-sm ">
+        Welcome to the particle animation by
+        <span 
+          id="june-text"
+          class="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+        >
+          June
+        </span>
+        <span 
+          id="chakma-text"
+          class="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+        >
+          Chakma
+        </span>
+        <br />
+        <a href="https://v0.dev/chat/RqstUbkUVcB?b=b_BoU5qmQ0ehp" class="text-gray-500 text-xs mt-2.5 inline-block" target="_blank" rel="noopener noreferrer">(fork this v0)</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('particleCanvas');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      let mousePosition = { x: 0, y: 0 };
+      let isTouching = false;
+      let isMobile = false;
+      let animationFrameId;
+
+      let particles = [];
+      let textImageData = null;
+      let elementBounds = { // Store Y-coordinates for color distinction
+        image: { top: 0, bottom: 0 },
+        june: { top: 0, bottom: 0 },
+        chakma: { top: 0, bottom: 0 }
+      };
+
+      // --- PNG Image Loading ---
+      const pngImage = new Image();
+      // !!! IMPORTANT: Replace 'your-image-url.png' with your actual PNG image path !!!
+      pngImage.src = 'https://i.imgur.com/G35m73e.png'; // Placeholder image (a simple circle)
+      pngImage.crossOrigin = 'Anonymous'; // Needed if loading from a different origin for getImageData
+
+      // --- Main setup function, called after image loads ---
+      pngImage.onload = () => {
+        setupAnimation();
+      };
+
+      pngImage.onerror = () => {
+        console.error("Failed to load PNG image. Please check the path.");
+        // Fallback: Continue without the image, only drawing text
+        setupAnimation(); 
+      };
+
+      function setupAnimation() {
+        updateCanvasSize();
+        createTextAndImageMap();
+        createInitialParticles();
+        animate();
+
+        // --- Event Listeners ---
+        window.addEventListener('resize', handleResize);
+        canvas.addEventListener('mousemove', handleMouseMove);
+        canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+        canvas.addEventListener('mouseleave', handleMouseLeave);
+        canvas.addEventListener('touchstart', handleTouchStart);
+        canvas.addEventListener('touchend', handleTouchEnd);
+      }
+
+      const updateCanvasSize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        isMobile = window.innerWidth < 768;
+      };
+
+      function createTextAndImageMap() {
+        if (!ctx || !canvas) return;
+
+        ctx.fillStyle = 'white';
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas for drawing
+
+        ctx.save(); // Save the initial state
+
+        const centerY = canvas.height / 2;
+        const fontSize = isMobile ? 80 : 150;
+        const fontFamily = 'Helvetica Neue, Helvetica, Arial, sans-serif';
+        const lineHeight = fontSize * 0.9; // Adjust spacing between lines
+        const totalHeight = fontSize * 2 + (isMobile ? 30 : 60); // Approx total height of content
+
+        // Calculate starting Y to center the whole block (image + June + Chakma)
+        let currentY = centerY - totalHeight / 2;
+        const marginY = isMobile ? 20 : 40; // Space between elements
+
+        // --- Draw PNG Image ---
+        if (pngImage.complete && pngImage.naturalWidth > 0) { // Check if image loaded successfully
+          const imgBaseWidth = isMobile ? 100 : 180;
+          const imgScale = imgBaseWidth / pngImage.naturalWidth;
+          const imgDrawWidth = pngImage.naturalWidth * imgScale;
+          const imgDrawHeight = pngImage.naturalHeight * imgScale;
+
+          const imgX = (canvas.width - imgDrawWidth) / 2;
+          const imgY = currentY;
+
+          ctx.drawImage(pngImage, imgX, imgY, imgDrawWidth, imgDrawHeight);
+          elementBounds.image = { top: imgY, bottom: imgY + imgDrawHeight };
+          currentY += imgDrawHeight + marginY; // Move Y cursor down
+        } else {
+            elementBounds.image = { top: 0, bottom: 0 }; // No image drawn, no bounds
+        }
+        
+        // --- Draw "June" ---
+        ctx.font = `${fontSize}px ${fontFamily}`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        const juneY = currentY + fontSize / 2; // Position text middle
+        ctx.fillText("June", canvas.width / 2, juneY);
+        elementBounds.june = { top: juneY - fontSize / 2, bottom: juneY + fontSize / 2 };
+        currentY += lineHeight + marginY; // Move Y cursor down
+
+        // --- Draw "Chakma" ---
+        const chakmaY = currentY + fontSize / 2; // Position text middle
+        ctx.fillText("Chakma", canvas.width / 2, chakmaY);
+        elementBounds.chakma = { top: chakmaY - fontSize / 2, bottom: chakmaY + fontSize / 2 };
+
+        ctx.restore(); // Restore initial canvas state
+
+        // Capture all drawn content as image data
+        textImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear for particle rendering
+      }
+
+      function createParticle() {
+        if (!ctx || !canvas || !textImageData) return null;
+
+        const data = textImageData.data;
+
+        for (let attempt = 0; attempt < 100; attempt++) {
+          const x = Math.floor(Math.random() * canvas.width);
+          const y = Math.floor(Math.random() * canvas.height);
+
+          if (data[(y * canvas.width + x) * 4 + 3] > 128) { // Check alpha channel for pixel presence
+            let scatteredColor = 'white'; // Default color if not matched
+            
+            // Determine scattered color based on Y-position
+            if (y >= elementBounds.image.top && y <= elementBounds.image.bottom && (pngImage.complete && pngImage.naturalWidth > 0)) {
+                // Particle is from the image
+                scatteredColor = '#FFFFFF'; // Bright white for image, or pick a color specific to the image
+            } else if (y >= elementBounds.june.top && y <= elementBounds.june.bottom) {
+                // Particle is from "June"
+                scatteredColor = '#FF69B4'; // Pink for June
+            } else if (y >= elementBounds.chakma.top && y <= elementBounds.chakma.bottom) {
+                // Particle is from "Chakma"
+                scatteredColor = '#00FF00'; // Green for Chakma
+            } else {
+                // Fallback for any stray particles or if bounds don't perfectly align
+                scatteredColor = '#22D3EE'; // Vercel blue as a general fallback
+            }
+
+            return {
+              x: x,
+              y: y,
+              baseX: x,
+              baseY: y,
+              size: Math.random() * 1 + 0.5,
+              color: 'white', 
+              scatteredColor: scatteredColor,
+              life: Math.random() * 100 + 50
+            };
+          }
+        }
+        return null;
+      }
+
+      function createInitialParticles() {
+        // Increased base count to account for more content (image + 2 lines of text)
+        const baseParticleCount = 10000; 
+        const particleCount = Math.floor(baseParticleCount * Math.sqrt((canvas.width * canvas.height) / (1920 * 1080)));
+        particles = []; 
+        for (let i = 0; i < particleCount; i++) {
+          const particle = createParticle();
+          if (particle) particles.push(particle);
+        }
+      }
+
+      function animate() {
+        if (!ctx || !canvas) return;
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const { x: mouseX, y: mouseY } = mousePosition;
+        const maxDistance = 240;
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          const dx = mouseX - p.x;
+          const dy = mouseY - p.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < maxDistance && (isTouching || !('ontouchstart' in window))) {
+            const force = (maxDistance - distance) / maxDistance;
+            const angle = Math.atan2(dy, dx);
+            const moveX = Math.cos(angle) * force * 60;
+            const moveY = Math.sin(angle) * force * 60;
+            p.x = p.baseX - moveX;
+            p.y = p.baseY - moveY;
+            
+            ctx.fillStyle = p.scatteredColor;
+          } else {
+            p.x += (p.baseX - p.x) * 0.1;
+            p.y += (p.baseY - p.y) * 0.1;
+            ctx.fillStyle = 'white'; 
+          }
+
+          ctx.fillRect(p.x, p.y, p.size, p.size);
+
+          p.life--;
+          if (p.life <= 0) {
+            const newParticle = createParticle();
+            if (newParticle) {
+              particles[i] = newParticle;
+            } else {
+              particles.splice(i, 1);
+              i--;
+            }
+          }
+        }
+
+        const baseParticleCount = 10000;
+        const targetParticleCount = Math.floor(baseParticleCount * Math.sqrt((canvas.width * canvas.height) / (1920 * 1080)));
+        while (particles.length < targetParticleCount) {
+          const newParticle = createParticle();
+          if (newParticle) particles.push(newParticle);
+        }
+
+        animationFrameId = requestAnimationFrame(animate);
+      }
+
+      // --- Event Handlers ---
+      const handleResize = () => {
+        cancelAnimationFrame(animationFrameId);
+        setupAnimation(); // Re-run the full setup
+      };
+
+      const handleMove = (x, y) => {
+        mousePosition = { x, y };
+      };
+
+      const handleMouseMove = (e) => {
+        handleMove(e.clientX, e.clientY);
+      };
+
+      const handleTouchMove = (e) => {
+        if (e.touches.length > 0) {
+          e.preventDefault();
+          handleMove(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      };
+
+      const handleTouchStart = () => {
+        isTouching = true;
+      };
+
+      const handleTouchEnd = () => {
+        isTouching = false;
+        mousePosition = { x: 0, y: 0 };
+      };
+
+      const handleMouseLeave = () => {
+        if (!('ontouchstart' in window)) {
+          mousePosition = { x: 0, y: 0 };
+        }
+      };
+    });
+  </script>
+</body>
+</html>
