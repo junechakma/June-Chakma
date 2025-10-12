@@ -739,6 +739,7 @@ a:hover {
     font-size: 1.2rem;
     line-height: 1.8;
     color: var(--text-color);
+    text-align: justify;
 }
 
 
@@ -749,54 +750,434 @@ a:hover {
     transition: color 0.3s ease;
 }
 
-.credentials  {
-    margin-top: 4rem;
-    display: flex;
-    flex-direction: row;
-    gap: 2.5rem;
+/* --- Experience Section --- */
+.experience-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
 }
 
-.credential-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
+.experience-section h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
-.credential-icon {
-    flex-shrink: 0;
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-color), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2.5rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -0.5rem;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--accent-color);
+    border: 3px solid var(--bg-color);
     border-radius: 50%;
-    background-color: rgba(169, 202, 227, 0.1);
-    color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(169, 202, 227, 0.2);
 }
 
-.credential-icon svg {
-    width: 22px;
-    height: 22px;
+.timeline-content {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.credential-content h4 {
+.timeline-content:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    color: var(--heading-color);
     margin: 0;
-    color: var(--text-color);
-    font-size: 1.2rem;
-    font-weight: 600;
 }
 
-.credential-content h5 {
-    margin: 0.5rem 0;
+.timeline-date {
+    font-size: 0.9rem;
     color: var(--accent-color);
     font-weight: 500;
 }
 
-.credential-date {
+.timeline-content h4 {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin: 0.5rem 0 1rem 0;
+    font-weight: 500;
+}
+
+.timeline-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* --- Education Section --- */
+.education-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+.education-section h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.education-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.education-card {
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.education-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.education-card-header .education-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: rgba(169, 202, 227, 0.15);
+    color: var(--accent-color);
+}
+
+.education-card-header .education-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.education-card-header h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin: 0;
+    font-weight: 600;
+}
+
+.education-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.education-degree {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.education-degree h4 {
+    font-size: 1.2rem;
+    color: var(--heading-color);
+    margin: 0;
+    font-weight: 600;
+}
+
+.degree-field {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin: 0;
+    font-weight: 500;
+}
+
+.education-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    margin: 0.5rem 0;
+}
+
+.education-institution {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+}
+
+.education-date {
     font-size: 0.9rem;
     color: var(--text-color);
     opacity: 0.7;
-    margin-bottom: 0.8rem;
+    margin: 0.5rem 0;
+}
+
+.education-gpa {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+/* --- Technical Skills Section --- */
+.skills-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+.skills-section h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.skills-legend {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.skill-category h3 {
+    font-size: 1.3rem;
+    color: var(--heading-color);
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-name {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.skill-level {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.level-s {
+    background-color: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.level-a {
+    background-color: rgba(169, 202, 227, 0.2);
+    color: var(--accent-color);
+    border: 1px solid rgba(169, 202, 227, 0.3);
+}
+
+.level-b {
+    background-color: rgba(100, 200, 150, 0.2);
+    color: #64C896;
+    border: 1px solid rgba(100, 200, 150, 0.3);
+}
+
+.level-c {
+    background-color: rgba(255, 165, 0, 0.2);
+    color: #FFA500;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.level-d {
+    background-color: rgba(150, 150, 150, 0.2);
+    color: #999;
+    border: 1px solid rgba(150, 150, 150, 0.3);
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), rgba(169, 202, 227, 0.6));
+    border-radius: 10px;
+    transition: width 0.6s ease;
+}
+
+/* --- Achievements Section --- */
+.achievements-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+.achievements-section h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.achievement-item {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba(169, 202, 227, 0.1);
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.achievement-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.achievement-content h3 {
+    font-size: 1.3rem;
+    color: var(--heading-color);
+    margin: 0 0 0.5rem 0;
+}
+
+.achievement-content h4 {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+}
+
+.achievement-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.achievement-date {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 1rem;
+}
+
+.achievement-details {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.achievement-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.achievement-link:hover {
+    transform: translateX(5px);
 }
 
 .info-section h2 {
@@ -810,6 +1191,185 @@ a:hover {
     font-size: 1.8rem;
     color: var(--heading-color);
     margin-bottom: 1.5rem;
+}
+
+/* --- Testimonials Section --- */
+.testimonials-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-section h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.testimonials-subtitle {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 1rem;
+    margin-bottom: 4rem;
+}
+
+.testimonials-carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.testimonials-carousel {
+    display: flex;
+    gap: 2.5rem;
+    animation: scroll 40s linear infinite;
+    width: fit-content;
+}
+
+.testimonials-carousel:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-400px * 4 - 2.5rem * 4));
+    }
+}
+
+.testimonial-card {
+    background: linear-gradient(135deg, var(--card-bg-color) 0%, rgba(31, 31, 31, 0.8) 100%);
+    border-radius: 15px;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    position: relative;
+    transition: all 0.4s ease;
+    min-width: 400px;
+    max-width: 400px;
+    flex-shrink: 0;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), rgba(169, 202, 227, 0.3));
+    border-radius: 15px 15px 0 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.testimonial-card:hover::before {
+    opacity: 1;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(169, 202, 227, 0.15);
+    border-color: var(--accent-color);
+}
+
+.testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.quote-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(169, 202, 227, 0.1);
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.testimonial-card:hover .quote-icon {
+    background: rgba(169, 202, 227, 0.2);
+    transform: scale(1.1);
+}
+
+.testimonial-profile {
+    flex-shrink: 0;
+}
+
+.profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover .profile-image {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(169, 202, 227, 0.3);
+}
+
+.testimonial-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.testimonial-text {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 3px solid rgba(169, 202, 227, 0.3);
+}
+
+.testimonial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.author-info h4 {
+    color: var(--heading-color);
+    font-size: 1.1rem;
+    margin: 0 0 0.25rem 0;
+    font-weight: 600;
+}
+
+.author-info p {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.rating {
+    display: flex;
+    gap: 0.2rem;
+    flex-shrink: 0;
+}
+
+.rating span {
+    color: var(--accent-color);
+    font-size: 1rem;
 }
 
 /* --- Contact Section --- */
@@ -930,13 +1490,123 @@ footer {
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
+    /* Hero Section */
+    .hero {
+        padding: 3rem 1.5rem;
+    }
+
     .hero-name {
-        /* Slightly smaller on tablets */
         font-size: clamp(3rem, 12vw, 6rem);
     }
 
     .hero-tagline {
         font-size: clamp(1rem, 4vw, 1.3rem);
+    }
+
+    .corner-icons {
+        top: 1.5rem;
+        right: 1.5rem;
+        gap: 1rem;
+    }
+
+    .corner-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* About Section */
+    .about-section {
+        margin: 4rem 0;
+    }
+
+    .about-section .container {
+        padding: 1rem 2rem;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+    }
+
+    /* Experience Section */
+    .experience-section {
+        padding: 4rem 0;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item {
+        padding-left: 2rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 1rem;
+    }
+
+    /* Education Section */
+    .education-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .education-card {
+        padding: 2rem;
+    }
+
+    .education-card-header .education-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .education-card-header .education-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .education-card-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .education-degree h4 {
+        font-size: 1.1rem;
+    }
+
+    /* Skills Section */
+    .skills-section {
+        padding: 4rem 0;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+    }
+
+    /* Achievements Section */
+    .achievements-section {
+        padding: 4rem 0;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .achievement-item {
+        padding: 1.5rem;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+        padding: 4rem 0;
     }
 
     .minimalist-grid {
@@ -1008,6 +1678,26 @@ footer {
     
     .about-text h2 {
         font-size: 1.8rem;
+    }
+
+    .testimonial-card {
+        min-width: 350px;
+        max-width: 350px;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-350px * 4 - 2.5rem * 4));
+        }
+    }
+
+    /* Floating Bubble - Smaller on tablet */
+    .floating-bubble {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -1087,6 +1777,35 @@ footer {
     }
     .social-buttons {
         gap: 1.2rem;
+    }
 
+    .testimonial-card {
+        min-width: 300px;
+        max-width: 300px;
+        padding: 2rem;
+    }
+
+    .profile-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .testimonial-text {
+        font-size: 0.9rem;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-300px * 4 - 2.5rem * 4));
+        }
+    }
+
+    /* Floating Bubble - Even smaller on mobile */
+    .floating-bubble {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
     }
 }
