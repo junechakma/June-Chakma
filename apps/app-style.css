@@ -87,8 +87,20 @@
     --app-shadow: rgba(0, 0, 0, 0.2);
 }
 
+/* Light Mode Styles */
+body.light-mode {
+    --app-accent: #3b82f6;
+    --app-bg: #ffffff;
+    --app-card-bg: #f8fafc;
+    --app-text: #2c3e50;
+    --app-heading: #1a202c;
+    --app-border: #e2e8f0;
+    --app-shadow: rgba(0, 0, 0, 0.1);
+}
+
 body {
     background-color: var(--app-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* --- Header --- */

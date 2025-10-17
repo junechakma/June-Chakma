@@ -25,6 +25,10 @@
     <script src="js/floatingbubble.js" defer></script>
     <!-- Project filter -->
     <script src="js/projectfilter.js" defer></script>
+    <!-- Theme toggle -->
+    <script src="js/theme-toggle.js" defer></script>
+    <!-- Hero dots pattern -->
+    <script src="js/hero-dots.js" defer></script>
 </head>
 
 <body>
@@ -45,14 +49,32 @@
             </div>
             <!-- Top right corner icons -->
             <div class="corner-icons">
-                <a href="#contact" class="corner-icon">
+                <button id="theme-toggle" class="corner-icon" aria-label="Toggle theme" data-tooltip="Change Theme">
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="#contact" class="corner-icon" data-tooltip="Contact Me">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
                 </a>
-                <a href="https://github.com/junechakma" target="_blank" rel="noopener noreferrer" class="corner-icon">
+                <a href="https://github.com/junechakma" target="_blank" rel="noopener noreferrer" class="corner-icon" data-tooltip="GitHub">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path
@@ -64,7 +86,7 @@
             <div class="hero-content">
                 <!-- Profile picture moved here, above the hero-name -->
                 <div class="hero-text">
-                    <img src="./Profile.png" alt="Portrait of June Chakma" class="hero-profile-image" loading="lazy">
+                    <img id="hero-profile-image" src="./profile-photo.png" alt="Portrait of June Chakma" class="hero-profile-image" loading="lazy">
                     <h1 class="hero-name">
                         <span>June</span> <span>Chakma</span>
                     </h1>
@@ -82,8 +104,7 @@
 
                 <!-- Project Tabs -->
                 <div class="project-tabs">
-                    <button class="tab-button active" data-filter="all">All</button>
-                    <button class="tab-button" data-filter="website">Websites</button>
+                    <button class="tab-button active" data-filter="website">Websites</button>
                     <button class="tab-button" data-filter="app">Apps</button>
                 </div>
 
@@ -132,30 +153,7 @@
                         </a>
                     </div>
 
-
-                    <!-- Project 3 -->
-                    <div class="grid-item" data-category="website">
-                        <a href="https://limoncellolondon.co.uk/" target="_blank" rel="noopener noreferrer">
-                            <img src="./project/lemoncello.png" alt="Project 1" loading="lazy">
-                            <div class="tech-overlay">
-                                <div class="tech-pills">
-                                    <span>Html</span>
-                                    <span>Css</span>
-                                    <span>JavaScript</span>
-                                </div>
-                            </div>
-                            <div class="view-project">
-                                <div class="view-project-pill">View Project <svg width="24" height="24"
-                                        viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        stroke="black" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M20 80 L80 20" />
-                                        <path d="M40 20 H80 V60" />
-                                    </svg></div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Project 2 -->
+                     <!-- Project 2 -->
                     <div class="grid-item" data-category="website">
                         <a href="https://compileq.co.uk/" target="_blank" rel="noopener noreferrer">
                             <img src="./project/compileq.png" alt="Project 8" loading="lazy">
@@ -179,12 +177,37 @@
 
                     <!-- Project 3 -->
                     <div class="grid-item" data-category="website">
-                        <a href="https://cafegreenleaf.co.uk/" target="_blank" rel="noopener noreferrer">
-                            <img src="./project/green-leaf.png" alt="Project 3" loading="lazy">
+                        <a href="https://limoncellolondon.co.uk/" target="_blank" rel="noopener noreferrer">
+                            <img src="./project/lemoncello.png" alt="Project 1" loading="lazy">
+                            <div class="tech-overlay">
+                                <div class="tech-pills">
+                                    <span>Html</span>
+                                    <span>Css</span>
+                                    <span>JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="view-project">
+                                <div class="view-project-pill">View Project <svg width="24" height="24"
+                                        viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        stroke="black" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 80 L80 20" />
+                                        <path d="M40 20 H80 V60" />
+                                    </svg></div>
+                            </div>
+                        </a>
+                    </div>
+
+                   
+
+                    <!-- Project 3 -->
+                    <div class="grid-item" data-category="website">
+                        <a href="https://classresponse.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="./project/class-response.png" alt="Project 3" loading="lazy">
                             <div class="tech-overlay">
                                 <div class="tech-pills">
                                     <span>React.js</span>
                                     <span>Tailwind</span>
+                                    <span>PostgressSQL</span>
                                 </div>
                             </div>
                             <div class="view-project">
@@ -325,6 +348,28 @@
                             </div>
                             <div class="view-project">
                                 <div class="view-project-pill">Buddhimotta <svg width="24" height="24"
+                                        viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        stroke="black" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 80 L80 20" />
+                                        <path d="M40 20 H80 V60" />
+                                    </svg></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Mobile App 3 - The Social Meet -->
+                    <div class="grid-item mobile-app" data-category="app">
+                        <a href="./apps/thesocialmeet.html">
+                            <img src="./project/social-meet.jpg" alt="The Social Meet App" loading="lazy">
+                            <div class="tech-overlay">
+                                <div class="tech-pills">
+                                    <span>Flutter</span>
+                                    <span>Firebase</span>
+                                    <span>React</span>
+                                </div>
+                            </div>
+                            <div class="view-project">
+                                <div class="view-project-pill">The Social Meet <svg width="24" height="24"
                                         viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none"
                                         stroke="black" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M20 80 L80 20" />

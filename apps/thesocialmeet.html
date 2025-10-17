@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Social Meet - June Chakma</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="app-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Favicon placeholders -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <!-- Lazy loading -->
+    <script src="../js/lazyload.js" defer></script>
+    <!-- Theme toggle -->
+    <script src="../js/theme-toggle.js" defer></script>
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="container">
+            <a href="../index.html" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+                </svg>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- App Hero Section -->
+        <section class="app-hero">
+            <div class="container">
+                <div class="app-hero-content">
+                    <div class="app-icon-wrapper">
+                        <img src="../project/app-images/social-meet1.jpg" alt="The Social Meet App Icon" class="app-icon" loading="lazy">
+                    </div>
+                    <div class="app-info">
+                        <h1>The Social Meet</h1>
+                        <p class="app-tagline">Personality-Based Social Messaging Platform</p>
+                        <div class="app-meta">
+                            <span class="app-developer">June Chakma</span>
+                            <span class="app-category">Social & Communication</span>
+                        </div>
+                        <div class="app-actions">
+                            <a href="https://www.thesocialmeet.com/" target="_blank" rel="noopener noreferrer" class="app-download-button">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Screenshots Section -->
+        <section class="app-screenshots">
+            <div class="container">
+                <h2>Screenshots</h2>
+                <div class="screenshot-carousel">
+                    <div class="screenshot-container">
+                        <div class="screenshot-wrapper">
+                            <video width="100%" height="100%" controls preload="none" loading="lazy">
+                                <source src="../project/app-images/social-meet.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet1.jpg" alt="The Social Meet Screenshot 1" class="screenshot lightbox-trigger" data-index="0" loading="lazy">
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet2.jpg" alt="The Social Meet Screenshot 2" class="screenshot lightbox-trigger" data-index="1" loading="lazy">
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet3.jpg" alt="The Social Meet Screenshot 3" class="screenshot lightbox-trigger" data-index="2" loading="lazy">
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet4.jpg" alt="The Social Meet Screenshot 4" class="screenshot lightbox-trigger" data-index="3" loading="lazy">
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet5.jpg" alt="The Social Meet Screenshot 5" class="screenshot lightbox-trigger" data-index="4" loading="lazy">
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet6.jpg" alt="The Social Meet Screenshot 6" class="screenshot lightbox-trigger" data-index="5" loading="lazy">
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet7.jpg" alt="The Social Meet Screenshot 7" class="screenshot lightbox-trigger" data-index="6" loading="lazy">
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet8.jpg" alt="The Social Meet Screenshot 8" class="screenshot lightbox-trigger" data-index="7" loading="lazy">
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet9.jpg" alt="The Social Meet Screenshot 9" class="screenshot lightbox-trigger" data-index="8" loading="lazy">
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet10.jpg" alt="The Social Meet Screenshot 10" class="screenshot lightbox-trigger" data-index="9" loading="lazy">
+                        </div>
+                        <div class="screenshot-wrapper">
+                            <img src="../project/app-images/social-meet11.jpg" alt="The Social Meet Screenshot 11" class="screenshot lightbox-trigger" data-index="10" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 18l-6-6 6-6"></path>
+                            </svg>
+                        </button>
+                        <button class="carousel-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18l6-6-6-6"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Gallery -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <img src="" alt="Fullscreen Image" id="lightbox-img">
+                <button class="lightbox-close">&times;</button>
+                <button class="lightbox-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"></path>
+                    </svg>
+                </button>
+                <button class="lightbox-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18l6-6-6-6"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- App Description Section -->
+        <section class="app-description">
+            <div class="container">
+                <div class="description-box">
+                    <h2>About this app</h2>
+                    <div class="description-content">
+                        <p>The Social Meet is an innovative social messaging platform that revolutionizes how people connect online. Unlike traditional messaging apps, The Social Meet uses personality assessments to create meaningful connections between users with compatible personalities.</p>
+
+                        <p>Users begin by taking a comprehensive personality test, which analyzes their traits, preferences, and communication styles. Based on the results, our intelligent system assigns users to groups where they can interact with like-minded individuals, fostering genuine connections and engaging conversations.</p>
+
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Comprehensive personality assessment test</li>
+                            <li>Smart group assignment based on personality compatibility</li>
+                            <li>Real-time messaging with Firebase Stream</li>
+                            <li>Intuitive and modern user interface</li>
+                            <li>Admin dashboard for group management and analytics</li>
+                            <li>Secure authentication and data storage</li>
+                            <li>Cross-platform support (iOS & Android)</li>
+                            <li>User profile customization</li>
+                        </ul>
+
+                        <h3>Technical Stack</h3>
+                        <div class="tech-details">
+                            <div class="tech-detail-item">
+                                <span class="tech-label">Mobile App</span>
+                                <span class="tech-value">Flutter</span>
+                            </div>
+                            <div class="tech-detail-item">
+                                <span class="tech-label">Database</span>
+                                <span class="tech-value">Firebase Firestore</span>
+                            </div>
+                            <div class="tech-detail-item">
+                                <span class="tech-label">Real-time Chat</span>
+                                <span class="tech-value">Firebase Stream</span>
+                            </div>
+                            <div class="tech-detail-item">
+                                <span class="tech-label">Admin Dashboard</span>
+                                <span class="tech-value">React</span>
+                            </div>
+                            <div class="tech-detail-item">
+                                <span class="tech-label">Styling</span>
+                                <span class="tech-value">Tailwind CSS</span>
+                            </div>
+                            <div class="tech-detail-item">
+                                <span class="tech-label">Backend</span>
+                                <span class="tech-value">Firebase</span>
+                            </div>
+                            <div class="tech-detail-item">
+                                <span class="tech-label">Platforms</span>
+                                <span class="tech-value">Android, iOS, Web</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Process Section -->
+        <section class="development-process">
+            <div class="container">
+                <h2>Development Process</h2>
+                <div class="process-grid">
+                    <div class="process-item">
+                        <div class="process-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>User Research & Design</h3>
+                        <p>Conducted extensive research on personality types and social interaction patterns. Designed an intuitive UI/UX that encourages meaningful connections while maintaining user privacy and comfort.</p>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <h3>Mobile & Web Development</h3>
+                        <p>Built the mobile application using Flutter for cross-platform compatibility. Developed a comprehensive admin dashboard using React and Tailwind CSS for group management and user analytics.</p>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3>Firebase Integration</h3>
+                        <p>Integrated Firebase services including Firestore for data storage, Firebase Stream for real-time messaging, and Firebase Authentication for secure user management. Optimized database queries for scalability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> June Chakma. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to update the year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Simple carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.screenshot-container');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            const screenshots = document.querySelectorAll('.screenshot-wrapper');
+
+            let currentIndex = 0;
+            const screenshotWidth = screenshots[0].offsetWidth;
+            const gap = 20; // Gap between screenshots
+
+            // Update the container position
+            function updateCarousel() {
+                const screenshotWidth = screenshots[0].offsetWidth + gap;
+                container.style.transform = `translateX(-${currentIndex * screenshotWidth}px)`;
+            }
+
+            // Initialize
+            updateCarousel();
+
+            // Next button click
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < screenshots.length - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+
+            // Previous button click
+            prevBtn.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+
+            // Window resize event
+            window.addEventListener('resize', updateCarousel);
+
+            // Lightbox Gallery Functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            const lightboxPrev = document.querySelector('.lightbox-prev');
+            const lightboxNext = document.querySelector('.lightbox-next');
+            const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+
+            let lightboxIndex = 0;
+            const imageSources = Array.from(lightboxTriggers).map(img => img.src);
+
+            // Open lightbox when clicking on an image
+            lightboxTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    lightboxIndex = parseInt(this.dataset.index);
+                    lightboxImg.src = this.src;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+                });
+            });
+
+            // Close lightbox
+            lightboxClose.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+
+            // Close lightbox when clicking outside the image
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Navigate to previous image
+            function prevImage() {
+                lightboxIndex = (lightboxIndex > 0) ? lightboxIndex - 1 : imageSources.length - 1;
+                lightboxImg.src = imageSources[lightboxIndex];
+            }
+
+            // Navigate to next image
+            function nextImage() {
+                lightboxIndex = (lightboxIndex < imageSources.length - 1) ? lightboxIndex + 1 : 0;
+                lightboxImg.src = imageSources[lightboxIndex];
+            }
+
+            lightboxPrev.addEventListener('click', prevImage);
+            lightboxNext.addEventListener('click', nextImage);
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('active')) return;
+
+                if (e.key === 'ArrowLeft') {
+                    prevImage();
+                } else if (e.key === 'ArrowRight') {
+                    nextImage();
+                } else if (e.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Touch swipe functionality
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            lightbox.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+
+            lightbox.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe left (next)
+                    nextImage();
+                } else if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe right (previous)
+                    prevImage();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
