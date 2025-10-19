@@ -856,10 +856,11 @@ a:hover {
     grid-row: span 3;
 }
 
-.grid-item:nth-child(10) {
-    grid-column: span 2;
+.grid-item:nth-child(9) {
+    grid-column: span 4;
     grid-row: span 3;
 }
+
 
 /* Mobile app styling */
 .grid-item.mobile-app {
