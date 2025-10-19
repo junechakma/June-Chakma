@@ -59,8 +59,10 @@
             });
         });
 
-        // Initialize with all projects visible
-        filterProjects('all');
+        // Initialize with the active tab's filter
+        const activeButton = document.querySelector('.tab-button.active');
+        const initialFilter = activeButton ? activeButton.getAttribute('data-filter') : 'website';
+        filterProjects(initialFilter);
     }
 
     // Initialize on DOM ready
