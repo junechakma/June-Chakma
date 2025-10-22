@@ -1512,7 +1512,7 @@ a:hover {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-400px * 4 - 2.5rem * 4));
+        transform: translateX(calc(-400px * 3 - 2.5rem * 3));
     }
 }
 
@@ -1958,7 +1958,7 @@ footer {
             transform: translateX(0);
         }
         100% {
-            transform: translateX(calc(-350px * 4 - 2.5rem * 4));
+            transform: translateX(calc(-350px * 3 - 2.5rem * 3));
         }
     }
 
@@ -2067,7 +2067,7 @@ footer {
             transform: translateX(0);
         }
         100% {
-            transform: translateX(calc(-300px * 4 - 2.5rem * 4));
+            transform: translateX(calc(-300px * 3 - 2.5rem * 3));
         }
     }
 
